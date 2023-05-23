@@ -1,9 +1,14 @@
-<h1>Here are your articles!</h1>
+<div class="container-sm bg-success p-2 text-dark bg-opacity-10 mt-3">
+  <h1 class="text-center">Here are your articles!</h1>
 
-<ul>
-<% @articles.each do |article| %>
-  <li><%= link_to article.title, article_path(article) %></li>
-<% end %>
-</ul>
+  <ul class="list-group list-unstyled">
+  <% @articles.each do |article| %>
+    <li><%= link_to article.title, article_path(article), :class => "list-group-item list-group-item-action text-decoration-none text-reset text-center" %></li>
+  <% end %>
+  </ul>
 
-<%= link_to "Create new article", new_article_path %>
+
+  <div class="d-grid gap-2 mt-3">
+    <button class="btn btn-outline-warning" type="button"><%= link_to "Create new article", new_article_path, :class => "text-decoration-none text-reset" %></button>
+  </div>
+</div>
